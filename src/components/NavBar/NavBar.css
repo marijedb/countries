@@ -1,10 +1,13 @@
 .navbar {
-    background-color: #FFF;
+    /* background-color: #caf0f8; */
+    background-color: #023e8a;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .5em 2em .5em 1em;
-    box-shadow: 0 0 5px #03055e77;
+    padding: .5em 1.5em .5em 1em;
+    box-shadow: 0 0 5px #000129;
+    text-shadow: 0 0 2px #000;
 }
 
 .navbar--logo--container {
@@ -24,6 +27,7 @@
 .navbar--slogan {
     display: none;
     font-size: .8rem;
+    font-style: italic;
 }
 
 
