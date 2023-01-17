@@ -11,43 +11,51 @@ function Main(){
 
 
     async function getCountries() {
+        console.log("getCountries, updates countries state")
         const response = await fetch(`https://restcountries.com/v3.1/all`)
         const data = await response.json()
         setCountries(data)
-        const test = countries.map(country => {
-            return country.name.official
-        })
-        console.log(test)
     }
     
     function searchCountry(event){
-        setCurrentSearch(event.target.value.toLowerCase())
-        console.log(currentSearch)
+        console.log("searchCountry() updates CurrentSearch State")
+        const search = event.target.value.toLowerCase()
+        if(search.length === 0){
+            setCurrentSearch("")
+        } else {
+            setCurrentSearch(search)
+        }
     }
     
     function getResult(){
-        if(currentSearch !== "") {
+        console.log("getResults() updates currentResult State")
+        if(currentSearch.length !== 0) {
             const result = countries.filter(country => {
                 if(country.name.official.toLowerCase().includes(currentSearch)){
                     return country.name.official
                 }
             })
             setCurrentResult(result)
-        }    
+        } else {
+            setCurrentResult([])
+        }
     }
 
     useEffect(()=> {
-        getResult()
-    }, [currentSearch])
+        console.log("useEffect getResults")
+        getResult() 
+    },[currentSearch])
 
     useEffect(() => {
+        console.log("UseEffect get countries")
         getCountries()
     }, [])
 
     return(
         <div className="main">
+            {console.log("main component")}
             <SearchBar currentSearch={currentSearch} handleSearch={(event) => searchCountry(event)} />
-            <Countries currentResult={currentResult} countries={countries} />
+            <Countries  currentResult={currentResult} countries={countries} />
         </div>
     )
 }
