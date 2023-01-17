@@ -4,7 +4,6 @@ import "./Countries.css"
 
 function Countries(props){
 
-    console.log(props.countries[1])
     const htmlElements = props.countries.map(country => {
         return <Country 
                     key={country.name.official}
