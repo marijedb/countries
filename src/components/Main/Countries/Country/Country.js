@@ -24,6 +24,15 @@ function Country(props){
         return languages.join(', ')
     }
 
+    function getCurrencies(){
+        let currencies = ''
+        for(const key in props.currencies){
+            return <p>- {props.currencies[key].name}: {props.currencies[key].symbol}</p>
+        }
+        return currencies
+    }
+
+
     
 
     return(
@@ -38,7 +47,9 @@ function Country(props){
                     <p>Language(s): {getLanguages()} </p>
                     <p>Population: {props.population}</p>
                     <p>Car drives on side: {props.car}</p>
-                    <p>Currencies: </p>
+                    <div>
+                        Currencies: {getCurrencies()}
+                    </div>
                     <a href={props.googleMaps}>Google Maps</a>
                 </div>
         </div>
