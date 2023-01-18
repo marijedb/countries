@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import Countries from "./Countries/Countries";
+import "./Main.css"
 
 function Main(){
     const [countries, setCountries] = useState([])
@@ -41,6 +42,7 @@ function Main(){
 
     useEffect(()=> {
         getResult() 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[currentSearch])
 
     useEffect(() => {
