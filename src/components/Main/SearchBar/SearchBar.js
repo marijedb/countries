@@ -2,8 +2,6 @@ import React from "react";
 import "./SearchBar.css"
 
 function SearchBar(props){
-
-    console.log("searchbar component")
     return(
         <div className="searchbar">
             <input 
