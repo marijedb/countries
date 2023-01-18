@@ -5,12 +5,11 @@ import "./Countries.css"
 function Countries({currentResult, currentSearch, countries}){
 
     // const test = countries.map(country => {
+    //     console.log(country.continents)
     //     let countryy = []
-    //     if(country.capital === undefined){
+    //     if(country.continents.length > 1 ){
     //         countryy.push(`no capital: ${country.name.common}`)  
-    //     } else if (country.capital.length > 1){
-    //         countryy.push(`multiple capitals: ${country.name.common}`) 
-    //     }
+    //     } 
     //     return countryy
     // })
 
