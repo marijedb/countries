@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import Countries from "./Countries/Countries";
 import "./Main.css"
+import { nanoid } from 'nanoid'
 
 function Main(){
     const [countries, setCountries] = useState([])
@@ -14,7 +15,14 @@ function Main(){
     async function getCountries() {
         const response = await fetch(`https://restcountries.com/v3.1/all`)
         const data = await response.json()
-        setCountries(data)
+        const updatedData = await data.map(country => {
+            return {
+                ...country,
+                isExpanded: false,
+                id: nanoid()
+            }
+        })
+        setCountries(updatedData)
     }
     
     function searchCountry(event){
@@ -40,6 +48,32 @@ function Main(){
         }
     }
 
+    function handleToggleClick(id){
+        if(currentResult.length > 0){
+            setCurrentResult(prevResult => prevResult.map(result => {
+                if(id === result.id){
+                    return {
+                        ...result,
+                        isExpanded: !result.isExpanded
+                    } 
+                } else {
+                    return result
+                }
+            }))
+        } else {
+            setCountries(prevCountries => prevCountries.map(country => {
+                if(id === country.id){
+                    return {
+                        ...country,
+                        isExpanded: !country.isExpanded
+                    }
+                } else {
+                    return country
+                }
+            }))
+        }
+    }
+
     useEffect(()=> {
         getResult() 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -52,7 +86,7 @@ function Main(){
     return(
         <div className="main">
             <SearchBar currentSearch={currentSearch} handleSearch={(event) => searchCountry(event)} />
-            <Countries currentSearch={currentSearch} currentResult={currentResult} countries={countries} />
+            <Countries currentSearch={currentSearch} currentResult={currentResult} countries={countries} handleToggle={(id) => handleToggleClick(id)}/>
         </div>
     )
 }

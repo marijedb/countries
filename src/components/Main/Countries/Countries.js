@@ -2,19 +2,7 @@ import React from "react";
 import Country from "./Country/Country";
 import "./Countries.css"
 
-function Countries({currentResult, currentSearch, countries}){
-
-    // const test = countries.map(country => {
-    //     console.log(country.continents)
-    //     let countryy = []
-    //     if(country.continents.length > 1 ){
-    //         countryy.push(`no capital: ${country.name.common}`)  
-    //     } 
-    //     return countryy
-    // })
-
-    // console.log(test)
-
+function Countries({currentResult, currentSearch, countries, handleToggle}){
     let htmlElements = ""
 
     if(currentResult.length !== 0){
@@ -32,6 +20,8 @@ function Countries({currentResult, currentSearch, countries}){
                         population={result.population}
                         region={result.region}
                         subregion={result.subregion}
+                        isExpanded={result.isExpanded}
+                        toggleIsExpanded={() => handleToggle(result.id)}
                     />
         })
     } else {
@@ -50,6 +40,8 @@ function Countries({currentResult, currentSearch, countries}){
                             population={country.population}
                             region={country.region}
                             subregion={country.subregion}
+                            isExpanded={country.isExpanded}
+                            toggleIsExpanded={() => handleToggle(country.id)}
                         />
             })
         } else {

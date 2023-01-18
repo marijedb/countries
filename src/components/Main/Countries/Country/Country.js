@@ -31,27 +31,29 @@ function Country(props){
         }
         return currencies
     }
-
-
     
-
     return(
         <div className="country">
                 <h3 className="country--name">{props.name}</h3>
                 <img className="country--flag" src={props.flag} alt="flag" />
-                <div className="country--info">
-                    <p>Capital City: {getCapital()}</p>
-                    <p>Region: {props.region}</p>
-                    <p>Subregion: {props.subregion}</p>
-                    <p>Continent: {props.continent}</p>
-                    <p>Language(s): {getLanguages()} </p>
-                    <p>Population: {props.population}</p>
-                    <p>Car drives on side: {props.car}</p>
-                    <div>
-                        Currencies: {getCurrencies()}
-                    </div>
-                    <a href={props.googleMaps}>Google Maps</a>
-                </div>
+                {props.isExpanded ? 
+                    <div className="country--info">
+                        <p>Capital City: {getCapital()}</p>
+                        <p>Region: {props.region}</p>
+                        <p>Subregion: {props.subregion}</p>
+                        <p>Continent: {props.continent}</p>
+                        <p>Language(s): {getLanguages()} </p>
+                        <p>Population: {props.population}</p>
+                        <p>Car drives on side: {props.car}</p>
+                        <div>
+                            Currencies: {getCurrencies()}
+                        </div>
+                        <a href={props.googleMaps}>Google Maps</a>
+                        <p onClick={props.toggleIsExpanded}>CLOSE</p>
+                    </div> : 
+                    
+                    <p onClick={props.toggleIsExpanded}>OPEN</p>
+                }
         </div>
     )
 }
