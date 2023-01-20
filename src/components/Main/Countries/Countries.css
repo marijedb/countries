@@ -41,3 +41,9 @@
         grid-template-columns: repeat(5, 1fr);
     }
 }
+
+@media (min-width: 2000px){
+    .countries {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}

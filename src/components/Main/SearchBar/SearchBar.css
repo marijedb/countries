@@ -16,5 +16,5 @@
 }
 
 .searchbar--input:focus {
-    outline: 2px solid #023e8a;
+    outline: 1px solid #023e8a;
 }
