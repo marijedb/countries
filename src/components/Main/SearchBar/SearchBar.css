@@ -5,10 +5,16 @@
 }
 
 .searchbar--input {
-    border: 1px solid black;
+    border: 1px solid #023e8a;
+    color: #023e8a;
     display: block;
     border-radius: 4px;
     padding: 1em;
     width: 100%;
+    max-width: 600px;
     margin: auto;
+}
+
+.searchbar--input:focus {
+    outline: 2px solid #023e8a;
 }

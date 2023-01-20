@@ -16,6 +16,7 @@
 
 .country--flag {
     width: 100%;
+    box-shadow: 0 0 3px #656565;
 }
 
 .country--info {
@@ -36,4 +37,20 @@
     text-shadow: 0 0 2px #b8b8b8;
     box-shadow: 1px 1px 1px #171717;
     margin-top: 1em;
+}
+
+.country--info--headers {
+    font-weight: bold;
+}
+
+.country--info--details {
+    font-weight: 400;
+}
+
+.country--currency {
+    font-weight: bold;
+}
+
+.country--google--link {
+    color: #fff;
 }

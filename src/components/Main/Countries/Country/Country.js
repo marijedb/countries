@@ -27,7 +27,7 @@ function Country(props){
     function getCurrencies(){
         let currencies = ''
         for(const key in props.currencies){
-            return <p>- {props.currencies[key].name}: {props.currencies[key].symbol}</p>
+            return <p>- {props.currencies[key].name}: <span className="country--currency">{props.currencies[key].symbol}</span></p>
         }
         return currencies
     }
@@ -41,17 +41,17 @@ function Country(props){
                         <div className="country--expand">
                             <p onClick={props.toggleIsExpanded}>Show less info</p>
                         </div>
-                        <p>Capital City: {getCapital()}</p>
-                        <p>Region: {props.region}</p>
-                        <p>Subregion: {props.subregion}</p>
-                        <p>Continent: {props.continent}</p>
-                        <p>Language(s): {getLanguages()} </p>
-                        <p>Population: {props.population}</p>
-                        <p>Car drives on side: {props.car}</p>
+                        <p className="country--info--headers">Capital City: <span className="country--info--details">{getCapital()}</span></p>
+                        <p className="country--info--headers">Region: <span className="country--info--details">{props.region}</span></p>
+                        <p className="country--info--headers">Subregion: <span className="country--info--details">{props.subregion}</span></p>
+                        <p className="country--info--headers">Continent: <span className="country--info--details">{props.continent}</span></p>
+                        <p className="country--info--headers">Language(s): <span className="country--info--details">{getLanguages()} </span></p>
+                        <p className="country--info--headers">Population: <span className="country--info--details">{props.population}</span></p>
+                        <p className="country--info--headers">Car drives on side: <span className="country--info--details">{props.car}</span></p>
                         <div>
-                            Currencies: {getCurrencies()}
+                            <p className="country--info--headers">Currencies: <span className="country--info--details">{getCurrencies()}</span></p>
                         </div>
-                        <a href={props.googleMaps}>Google Maps</a>
+                        <a className="country--google--link" href={props.googleMaps}>Google Maps</a>
                     </div> : 
                     <div className="country--expand">
                         <p onClick={props.toggleIsExpanded}>Show more info</p>

@@ -1,0 +1,14 @@
+.footer {
+    color: #fff;
+    background-color: #023e8a;
+    text-shadow: 0 0 2px #000;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer--link {
+    color: #fff;
+}
