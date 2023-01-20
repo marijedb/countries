@@ -45,7 +45,10 @@ function Countries({currentResult, currentSearch, countries, handleToggle}){
                         />
             })
         } else {
-            return <div>Nothing found</div>
+            return <div >
+                        <h3 className="countries--noresult">No results</h3>
+                        <p className="countries--newsearch">Try searching on different name</p>
+                    </div>
         }
     }
     

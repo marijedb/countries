@@ -38,6 +38,9 @@ function Country(props){
                 <img className="country--flag" src={props.flag} alt="flag" />
                 {props.isExpanded ? 
                     <div className="country--info">
+                        <div className="country--expand">
+                            <p onClick={props.toggleIsExpanded}>Show less info</p>
+                        </div>
                         <p>Capital City: {getCapital()}</p>
                         <p>Region: {props.region}</p>
                         <p>Subregion: {props.subregion}</p>
@@ -49,10 +52,10 @@ function Country(props){
                             Currencies: {getCurrencies()}
                         </div>
                         <a href={props.googleMaps}>Google Maps</a>
-                        <p onClick={props.toggleIsExpanded}>CLOSE</p>
                     </div> : 
-                    
-                    <p onClick={props.toggleIsExpanded}>OPEN</p>
+                    <div className="country--expand">
+                        <p onClick={props.toggleIsExpanded}>Show more info</p>
+                    </div>
                 }
         </div>
     )

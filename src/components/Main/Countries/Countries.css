@@ -4,6 +4,20 @@
     gap: 1em;
 }
 
+.countries--noresult {
+    margin-top: 2em;
+    margin-bottom: .3em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.countries--newsearch {
+    text-align: center;
+    margin-top: 0;
+    font-style: italic;
+}
+
 @media (min-width: 540px){
     .countries {
         grid-template-columns: repeat(2, 1fr);

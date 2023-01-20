@@ -7,6 +7,7 @@
     background-color: #023e8a;
     border-radius: 8px;
     box-shadow: 8px 8px 8px #656565;
+    width: 100%;
 }
 
 .country--name {
@@ -19,4 +20,20 @@
 
 .country--info {
     align-self: flex-start;
+    margin-top: auto;
+    width: 100%;
+}
+
+.country--expand {
+    display: flex;
+    width: 100%;
+    color: #023e8a;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    text-shadow: 0 0 2px #b8b8b8;
+    box-shadow: 1px 1px 1px #171717;
+    margin-top: 1em;
 }
